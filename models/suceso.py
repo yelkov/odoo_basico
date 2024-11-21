@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 
-class odoo_basico(models.Model):
+class suceso(models.Model):
     _name = 'odoo_basico.suceso'
     _description = 'Módulo 2 de odoo básico'
 
