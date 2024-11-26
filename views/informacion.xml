@@ -34,6 +34,9 @@
                   <field name="ancho_en_cms"/>
                   <field name="longo_en_cms"/>
                   <field name="peso"/>
+                  <field name="volume"/>
+                  <field name="densidad"/>
+                  <field name="literal" readonly="1"/>
                 </group>
               </page>
               <page string="Datos ">
@@ -62,6 +65,8 @@
           <field name="ancho_en_cms"/>
           <field name="longo_en_cms"/>
           <field name="peso"/>
+          <field name="volume"/>
+          <field name="densidad"/>
         </list>
       </field>
     </record>
