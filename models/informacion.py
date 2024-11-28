@@ -19,6 +19,9 @@ class odoo_basico(models.Model):
     autorizado = fields.Boolean(string="¿Autorizado?",default=True)
     sexo_traducido = fields.Selection([('Hombre','Home'),('Mujer','Muller'),('Otros','Outros')],string="Sexo:")
     literal = fields.Char(store=False)
+    foto = fields.Binary(string='Foto')
+    adxunto_nome = fields.Char(string="Nome Adxunto")
+    adxunto = fields.Binary(string="Arquivo adxunto")
 
     _sql_constraints = [('nomeUnico', 'unique(name)', 'Non se pode repetir o nome')]
     _order = "descripcion desc"
