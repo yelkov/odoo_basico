@@ -1,5 +1,6 @@
 <odoo>
-    <data>
+    <data noupdate="1">
+        <!--Si ponemos en data el atributo noupdate="1" no se actualizan los datos, si lo ponemos a 0 se crean pero sin recargarlos cada vez -->
         <record model="odoo_basico.informacion" id="odoo_basicoinformacion1">
             <field name="name">Rexistro 1</field>
             <field name="descripcion">Descripción Rexistro 1</field>
