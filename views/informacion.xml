@@ -3,7 +3,7 @@
     <record model="ir.actions.act_window" id="informacion_list_action">
       <field name="name">Info</field>
       <field name="res_model">odoo_basico.informacion</field>
-      <field name="view_mode">list,form</field>
+      <field name="view_mode">list,form,graph,pivot</field>
       <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro rexistro</p>
       </field>
@@ -76,6 +76,32 @@
           <field name="volume"/>
           <field name="densidad"/>
         </list>
+      </field>
+    </record>
+
+    <!-- vista en forma de graph -->
+    <record model="ir.ui.view" id="informacion_graph_view">
+      <field name="name">informacion.grafico</field>
+      <field name="model">odoo_basico.informacion</field>
+      <field name="arch" type="xml">
+        <graph string="alto" type="bar">
+          <field name="alto_en_cms" type="row"/>
+        </graph>
+      </field>
+    </record>
+
+    <!-- vista en forma de pivot -->
+    <record model="ir.ui.view" id="informacion_pivot_view">
+      <field name="name">informacion.pivot</field>
+      <field name="model">odoo_basico.informacion</field>
+      <field name="arch" type="xml">
+        <pivot string="pivotando">
+          <field name="alto_en_cms" type="row"/>
+          <field name="sexo_traducido" type="col"/>
+          <field name="densidad" type="measure"/>
+          <field name="peso" type="measure"/>
+          <field name="volume" type="measure"/>
+        </pivot>
       </field>
     </record>
 
