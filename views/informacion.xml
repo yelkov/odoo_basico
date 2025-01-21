@@ -52,6 +52,15 @@
                   <field name="adxunto" filename="adxunto_nome"/>
                 </group>
               </page>
+              <page string="Moedas">
+                <group>
+                  <field name="moeda_id"/>
+                  <field name="moeda_euro_id" invisible="1"/>
+                  <field name="gasto_en_euros"/>
+                  <field name="moeda_dolar_id" invisible="1"/>
+                  <field name="gasto_en_dolares"/>
+                </group>
+              </page>
             </notebook>
           </sheet>
         </form>
@@ -75,6 +84,7 @@
           <field name="peso"/>
           <field name="volume"/>
           <field name="densidad"/>
+          <field name="moeda_id"/>
         </list>
       </field>
     </record>
