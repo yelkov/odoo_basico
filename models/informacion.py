@@ -24,8 +24,11 @@ class odoo_basico(models.Model):
     adxunto = fields.Binary(string="Arquivo adxunto")
 
     #Os campos Many2one crean un campo na BD
-    moeda_id = fields.Many2one('res.currency',domain="[('position','=','after')]")
+    moeda_id = fields.Many2one('res.currency',domain="[('active','=','true')]")
     #con domain, filtramos os valores mostrados. Pode ser mediante unha constante (vai entre comillas) ou unha variable
+    moeda_en_texto = fields.Char(related="moeda_id.currency_unit_label",string="Moeda en formato texto")
+
+    creador_da_moeda = fields.Char(related="moeda_id.create_uid.login",string="Usuario creador da moeda",)
 
     #ahora utilizamos una funcion lambda para, en una relacion Many2One poner un valor por defecto - el euro
     moeda_euro_id = fields.Many2one('res.currency',default=lambda self: self.env['res.currency'].search([('name', '=', "EUR")],limit=1))
@@ -35,6 +38,8 @@ class odoo_basico(models.Model):
 
     moeda_dolar_id = fields.Many2one('res.currency',default= lambda  self: self.env['res.currency'].search([('name','=',"USD")],limit=1))
     gasto_en_dolares = fields.Monetary("Gasto en Dolares",'moeda_dolar_id')
+
+
 
     _sql_constraints = [('nomeUnico', 'unique(name)', 'Non se pode repetir o nome')]
     _order = "descripcion desc"
