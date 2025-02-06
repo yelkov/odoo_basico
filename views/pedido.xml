@@ -1,0 +1,118 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="pedido_list_action">
+      <field name="name">Pedido</field>
+      <field name="res_model">odoo_basico.pedido</field>
+      <field name="view_mode">list,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro rexistro</p>
+      </field>
+    </record>
+    
+    <!-- vista en forma de lista/tree -->
+
+    <record model="ir.ui.view" id="pedido_view_list">
+      <field name="name">pedido.list</field>
+      <field name="model">odoo_basico.pedido</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="nome"/>
+          <field name="data"/>
+          <field name="cliente"/>
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="pedido_form_view">
+      <field name="name">pedido.form</field>
+      <field name="model">odoo_basico.pedido</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="actualizadorSexo" type="object" string="Actualiza o campo Sexo do modelo información"/>
+            <button name="creaRexistroInformacion" type="object" string="Crear rexistro en información"/>
+            <button name="actualizaRexistroInformacion" type="object" string="Actualiza rexistro en información"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="nome"/>
+            </group>
+            <notebook>
+              <page string="Datos pedido">
+                <group>
+                  <field name="nome"/>
+                  <field name="data"/>
+                  <field name="cliente"/>
+                  <separator string="Visualizar e engadir"/>
+                  <field name="lineapedido_ids"/>
+                  <!--Se quixeramos que non se poideran editar as lineapedido:
+                  <separator string="Só visualizar"/>
+                  <field name="lineapedido_ids" readonly="1"/>
+                  -->
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- explicit list view definition -->
+    <!--
+        <record model="ir.ui.view" id="odoo_basico.list">
+          <field name="name">odoo_basico list</field>
+          <field name="model">odoo_basico.odoo_basico</field>
+          <field name="arch" type="xml">
+            <list>
+              <field name="name"/>
+              <field name="value"/>
+              <field name="value2"/>
+            </list>
+          </field>
+        </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+        <record model="ir.actions.act_window" id="odoo_basico.action_window">
+          <field name="name">odoo_basico window</field>
+          <field name="res_model">odoo_basico.odoo_basico</field>
+          <field name="view_mode">list,form</field>
+        </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+        <record model="ir.actions.server" id="odoo_basico.action_server">
+          <field name="name">odoo_basico server</field>
+          <field name="model_id" ref="model_odoo_basico_odoo_basico"/>
+          <field name="state">code</field>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "list,form",
+              "res_model": model._name,
+            }
+          </field>
+        </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+        <menuitem name="odoo_basico" id="odoo_basico.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+        <menuitem name="Menu 1" id="odoo_basico.menu_1" parent="odoo_basico.menu_root"/>
+        <menuitem name="Menu 2" id="odoo_basico.menu_2" parent="odoo_basico.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+        <menuitem name="List" id="odoo_basico.menu_1_list" parent="odoo_basico.menu_1"
+                  action="odoo_basico.action_window"/>
+        <menuitem name="Server to list" id="odoo_basico" parent="odoo_basico.menu_2"
+                  action="odoo_basico.action_server"/>
+    -->
+  </data>
+</odoo>

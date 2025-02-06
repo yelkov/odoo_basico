@@ -71,6 +71,10 @@ class odoo_basico(models.Model):
             if rexistro.peso < 1 or rexistro.peso > 4:
                 raise ValidationError('Os peso de %s ten que ser entre 1 e 4 ' % rexistro.name)
 
+
+    def _cambia_campo_sexo(self, rexistro):
+        rexistro.sexo_traducido = "Hombre"
+
 #     value2 = fields.Float(compute="_value_pc", store=True)
 #     description = fields.Text()
 #
