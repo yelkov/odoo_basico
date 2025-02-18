@@ -2,6 +2,7 @@
 from dataclasses import field
 
 from odoo import models, fields, api
+from odoo.api import ondelete
 from odoo.exceptions import ValidationError
 
 
@@ -12,7 +13,9 @@ class pedido(models.Model):
     nome = fields.Char(required=True,size=20,string="Nome pedido:")
     data = fields.Date(required=True,string="Data do pedido:")
     lineapedido_ids = fields.One2many("odoo_basico.lineapedido",'pedido_id', string='Líneas de pedido:')
-    cliente = fields.Many2one('res.partner')
+    cliente = fields.Many2one('res.partner', ondelete="cascade", required=True)
+    name = fields.Char(required=True,size=20,string="Identificador de Pedido")
+    #persoa_id = fields.Many2one('res.partner')
 
     def actualizadorSexo(self):
         informacion_ids = self.env['odoo_basico.informacion'].search([('autorizado', '=', False)])
