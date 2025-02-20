@@ -17,8 +17,9 @@
       <field name="arch" type="xml">
         <form>
           <header>
-
             <button name="envio_email" type="object" string="Enviar Email"/>
+            <button name="ver_contexto" type="object" string="Ver Contexto"/>
+            <button name="actualiza_hora_timezone_usuario" type="object" string="Actualiza Hora a Timezone do Usuario"  class="oe_highlight"/>
           </header>
           <sheet>
             <group>
@@ -67,6 +68,21 @@
                   <field name="gasto_en_dolares"/>
                 </group>
               </page>
+              <page string="Datas">
+                <group>
+                  <group>
+                    <field name="data"/>
+                    <field name="mes_castelan"/>
+                    <field name="mes_galego"/>
+                    <field name="mes_aleman"/>
+                  </group>
+                  <group>
+                    <field name="data_hora"/>
+                    <field name="hora_utc"/>
+                    <field name="hora_timezone_usuario"/>
+                  </group>
+                </group>
+              </page>
             </notebook>
           </sheet>
         </form>
@@ -82,6 +98,10 @@
         <list>
           <field name="name"/>
           <field name="descripcion"/>
+          <field name="data"/>
+          <field name="data_hora"/>
+          <field name="hora_utc"/>
+          <field name="hora_timezone_usuario"/>
           <field name="autorizado"/>
           <field name="sexo_traducido"/>
           <field name="alto_en_cms"/>

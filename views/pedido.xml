@@ -19,6 +19,7 @@
           <field name="nome"/>
           <field name="data"/>
           <field name="cliente"/>
+          <field name="persoa_id"/>
         </list>
       </field>
     </record>
@@ -32,6 +33,8 @@
             <button name="actualizadorSexo" type="object" string="Actualiza o campo Sexo do modelo información"/>
             <button name="creaRexistroInformacion" type="object" string="Crear rexistro en información"/>
             <button name="actualizaRexistroInformacion" type="object" string="Actualiza rexistro en información"/>
+            <button name="actualizadorHoraTimezone" type="object" string="Actualiza Hora Timezone do Usuario en todos os rexistros do modelo información"/>
+
           </header>
           <sheet>
             <group>
@@ -43,6 +46,7 @@
                   <field name="nome"/>
                   <field name="data"/>
                   <field name="cliente"/>
+                  <field name="persoa_id"/>
                   <separator string="Visualizar e engadir"/>
                   <field name="lineapedido_ids"/>
                   <!--Se quixeramos que non se poideran editar as lineapedido:
