@@ -29,6 +29,7 @@ Long description of module's purpose
         'views/pedido.xml',
         'views/lineapedido.xml',
         'views/persoa.xml',
+        'accions_planificadas/accion_planificada.xml',
         'reports/reports_informacion.xml',
         'reports/report_pedido.xml',
         'reports/report_header.xml',

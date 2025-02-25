@@ -6,4 +6,5 @@ from . import pedido
 from . import lineapedido
 from . import persoa
 from . import miñasUtilidades
+from . import accion_planificada
 
